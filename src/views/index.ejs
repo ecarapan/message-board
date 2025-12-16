@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <ul>
+      <% messages.forEach((message) => { %>
+      <li>
+        <strong>User:</strong> <%= message.user %><br />
+        <strong>Text:</strong> <%= message.text %><br />
+        <strong>Date:</strong> <%= message.added %>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
