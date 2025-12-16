@@ -4,12 +4,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a href="/new">Add a new message</a>
     <ul>
-      <% messages.forEach((message) => { %>
+      <% messages.forEach((message, idx) => { %>
       <li>
         <strong>User:</strong> <%= message.user %><br />
         <strong>Text:</strong> <%= message.text %><br />
         <strong>Date:</strong> <%= message.added %>
+        <a href="/messages/<%= idx %>">Open</a>
       </li>
       <% }); %>
     </ul>
