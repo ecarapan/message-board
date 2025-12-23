@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
+const port = process.env.PORT || 3000;
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -18,10 +19,9 @@ app.use((err, req, res, next) => {
   res.status(err.statusCode || 500).send(err.message);
 });
 
-const PORT = 3000;
-app.listen(PORT, (error) => {
+app.listen(port, (error) => {
   if (error) {
     throw error;
   }
-  console.log(`My first Express app - listening on port ${PORT}!`);
+  console.log(`My first Express app - listening on port ${port}!`);
 });
